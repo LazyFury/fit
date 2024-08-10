@@ -6,12 +6,12 @@ import 'package:fit/constants.dart';
 class TabData {
   final String title;
   final IconData? icon;
-  final ImageProvider? image;
+  final Widget Function(Color?) image;
   final bool isPage;
   final Widget? child;
   TabData(
       {required this.title,
-      this.image,
+      required this.image,
       this.icon,
       this.isPage = true,
       this.child});
@@ -52,13 +52,12 @@ Container Tabbar(List<TabData> tabs,
                                   ? UIColors.primary
                                   : Colors.black,
                             )
-                          : Image(
-                              image: entry.value.image!,
-                              width: 20,
-                              height: 20,
-                              color: currentIndex == entry.key
+                          : SizedBox(
+                              width: 24,
+                              height: 24,
+                              child: entry.value.image(currentIndex == entry.key
                                   ? UIColors.primary
-                                  : Colors.black,
+                                  : Colors.black),
                             ),
                       UIText.text(
                         entry.value.title,

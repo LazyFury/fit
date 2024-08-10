@@ -2,6 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:flutter_svg_provider/flutter_svg_provider.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:fit/components/navbar.dart';
@@ -32,28 +33,36 @@ class TabbarStack extends HookConsumerWidget {
     PageData(
       tab: TabData(
         title: "Fit!",
-        image: const Svg("assets/icons/rili.svg"),
+        image: (color) => SvgPicture.asset(
+          "assets/icons/rili.svg",
+          color: color,
+        ),
       ),
       page: const Home(),
     ),
     PageData(
-      tab: TabData(title: "运动", image: const Svg("assets/icons/dangan.svg")),
+      tab: TabData(
+          title: "运动",
+          image: (color) => SvgPicture.asset(
+                "assets/icons/dangan.svg",
+                color: color,
+              )),
       page: Container(),
     ),
     PageData(
       // tab 的 child 留白占位，用自定义画笔给 tababr 话异型背景，positoned 定位新的自定义按钮
       tab: TabData(
-        title: "记录",
-        icon: Icons.record_voice_over,
-        isPage: false,
-        child: Builder(
-          builder: (context) {
-            return Container(
-              width: rpx(context, 64),
-            );
-          },
-        ),
-      ),
+          title: "记录",
+          icon: Icons.record_voice_over,
+          isPage: false,
+          child: Builder(
+            builder: (context) {
+              return Container(
+                width: rpx(context, 64),
+              );
+            },
+          ),
+          image: (color) => Container()),
       page: Container(),
       header: const Navbar(
         title: "分析",
@@ -61,11 +70,21 @@ class TabbarStack extends HookConsumerWidget {
       ),
     ),
     PageData(
-      tab: TabData(title: "睡眠", image: const Svg("assets/icons/yejian.svg")),
+      tab: TabData(
+          title: "睡眠",
+          image: (color) => SvgPicture.asset(
+                "assets/icons/yejian.svg",
+                color: color,
+              )),
       page: Container(),
     ),
     PageData(
-      tab: TabData(title: "我的", image: const Svg('assets/icons/wode.svg')),
+      tab: TabData(
+          title: "我的",
+          image: (color) => SvgPicture.asset(
+                "assets/icons/wode.svg",
+                color: color,
+              )),
       page: const Text("我的"),
       header: const Navbar(
         title: "我的",
@@ -92,9 +111,10 @@ class TabbarStack extends HookConsumerWidget {
               children: [
                 UITouchAble(
                   child: const TDAvatar(
-                      size: TDAvatarSize.small,
-                      type: TDAvatarType.customText,
-                      text: 'A'),
+                    size: TDAvatarSize.small,
+                    type: TDAvatarType.customText,
+                    text: 'A',
+                  ),
                   onTap: () {
                     showGeneralDialog(
                       context: context,
@@ -115,12 +135,8 @@ class TabbarStack extends HookConsumerWidget {
               mainAxisAlignment: MainAxisAlignment.end,
               children: [
                 UITouchAble(
-                  child: const Image(
-                    image: Svg(
-                        "assets/icons/Basil/Outline/Status/Notification.svg"),
-                    width: 24,
-                    height: 24,
-                  ),
+                  child: SvgPicture.asset(
+                      "assets/icons/Basil/Outline/Status/Notification.svg"),
                   onTap: () {},
                 ),
               ],

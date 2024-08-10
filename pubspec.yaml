@@ -37,6 +37,7 @@ dependencies:
   cupertino_icons: ^1.0.6
   easy_refresh: ^3.3.4
   flutter_svg_provider: ^1.0.7
+  flutter_svg: ^2.0.10+1
   provider: ^6.1.2
   hooks_riverpod: ^2.5.1
   flutter_hooks: ^0.20.5
@@ -76,7 +77,7 @@ flutter:
   assets:
     - assets/images/icon/
     - assets/icons/
-    - assets/basil/
+    - assets/icons/Basil/Outline/Status/Notification.svg
     
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
