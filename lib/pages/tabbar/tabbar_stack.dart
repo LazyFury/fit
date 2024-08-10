@@ -169,7 +169,7 @@ class TabbarStack extends HookConsumerWidget {
             ],
           ),
           Positioned(
-            bottom: 4 + safeAreaBottom,
+            bottom: 0 + safeAreaBottom,
             left: screenWidth / 2 - 24,
             child: UITouchAble(
               onTap: () {
@@ -242,7 +242,14 @@ class TabbarStack extends HookConsumerWidget {
                       child: Column(
                         mainAxisAlignment: MainAxisAlignment.center,
                         crossAxisAlignment: CrossAxisAlignment.center,
-                        children: [UIText.light("+", fontSize: 30)],
+                        children: [
+                          SvgPicture.asset(
+                            "assets/icons/Basil/Solid/General/Pulse.svg",
+                            width: 20,
+                            height: 20,
+                            color: Colors.white,
+                          )
+                        ],
                       ),
                     ),
                     const Text(
