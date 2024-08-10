@@ -116,7 +116,7 @@ class TabbarStack extends HookConsumerWidget {
               children: [
                 UITouchAble(
                   child: const Image(
-                    image: Svg("assets/icons/tixing.svg"),
+                    image: Svg("assets/basil/Outlin/Status/Notification.svg"),
                     width: 24,
                     height: 24,
                   ),
