@@ -136,7 +136,10 @@ class TabbarStack extends HookConsumerWidget {
               children: [
                 UITouchAble(
                   child: SvgPicture.asset(
-                      "assets/icons/Basil/Outline/Status/Notification.svg"),
+                    "assets/icons/tixing.svg",
+                    width: 25,
+                    height: 25,
+                  ),
                   onTap: () {},
                 ),
               ],
@@ -226,12 +229,16 @@ class TabbarStack extends HookConsumerWidget {
                       width: 48,
                       height: 48,
                       decoration: BoxDecoration(
-                        color: UIColors.primary,
-                        borderRadius: BorderRadius.circular(30),
-                        border: const Border.fromBorderSide(BorderSide(
-                            color: Color.fromARGB(255, 232, 232, 232),
-                            width: .5)),
-                      ),
+                          color: UIColors.primary,
+                          borderRadius: BorderRadius.circular(30),
+                          border: const Border.fromBorderSide(BorderSide(
+                              color: Color.fromARGB(255, 232, 232, 232),
+                              width: .5)),
+                          boxShadow: [
+                            BoxShadow(
+                                color: UIColors.primary.withOpacity(.35),
+                                blurRadius: 10)
+                          ]),
                       child: Column(
                         mainAxisAlignment: MainAxisAlignment.center,
                         crossAxisAlignment: CrossAxisAlignment.center,
