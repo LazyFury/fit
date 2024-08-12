@@ -239,14 +239,12 @@ class TabbarStack extends HookConsumerWidget {
                                 color: UIColors.primary.withOpacity(.35),
                                 blurRadius: 10)
                           ]),
-                      child: Column(
+                      child: const Column(
                         mainAxisAlignment: MainAxisAlignment.center,
                         crossAxisAlignment: CrossAxisAlignment.center,
                         children: [
-                          SvgPicture.asset(
-                            "assets/icons/Basil/Solid/General/Pulse.svg",
-                            width: 20,
-                            height: 20,
+                          Icon(
+                            Icons.add,
                             color: Colors.white,
                           )
                         ],

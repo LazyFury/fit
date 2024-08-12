@@ -57,7 +57,7 @@ Container Tabbar(List<TabData> tabs,
                               height: 24,
                               child: entry.value.image(currentIndex == entry.key
                                   ? UIColors.primary
-                                  : Colors.black),
+                                  : Colors.black87),
                             ),
                       UIText.text(
                         entry.value.title,
@@ -65,7 +65,7 @@ Container Tabbar(List<TabData> tabs,
                         fontSize: 12,
                         color: currentIndex == entry.key
                             ? UIColors.primary
-                            : Colors.black,
+                            : Colors.black87,
                       ),
                     ],
                   ),
